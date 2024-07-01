@@ -1,0 +1,38 @@
+<style>
+    *
+    {
+        box-sizing: border-box;
+    }
+    .flex-container
+    {
+        display: flex;
+        flex-direction: row;
+        font-size: 30px;
+        text-align: center;
+    }
+    .flex-item-left
+    {
+        background-color: #f1f1f1;
+        padding: 10px;
+        flex:50%;
+    }
+    .flex-item-right
+    {
+        background-color: #f1f1f1;
+        padding:10px;
+        flex:50%;
+    }
+    /*Resposive*/
+    @media screen and (max-width: 600px)
+    {
+        .flex-container
+        {
+            flex-direction: column;
+            
+        }
+    }
+</style>
+<div class="flex-container">
+   <div class="flex-item-left">1</div>
+   <div class="flex-item-right">2</div>
+</div>
