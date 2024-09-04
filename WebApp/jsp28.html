@@ -19,9 +19,66 @@ num.map((value,index)=>{
 
 </script> -->
 <!--flatMap-->
-<script>
+<!-- <script>
     const myArr=[1,2,3,4,5,6];
     const flatArr=myArr.flatMap((value,index)=>{
         return [value,value*2];
         });
+</script> -->
+<!--reduce-->
+<!-- <script>
+    const myArr=[1,2,3,4,5,6];
+    const sum=myArr.reduce((acc,cur)=>{
+        return acc+cur;
+        },0);
+
+</script> -->
+<!--reduceRight-->
+<!-- <script>
+    const myArr=[1,2,3,4,5,6];
+    const sum=myArr.reduceRight((acc,cur)=>{
+        return acc+cur;
+    },0);
+</script> -->
+<!--array.from-->
+<!-- <script>
+
+const myArr=[1,2,3,4,5,6];
+const mySet=new Set([1,2,3,4,5,6]);
+
+const myArrFromSet=Array.from(mySet);
+
+
+
+console.log(myArrFromSet) -->
+<!--keys-->
+<!-- <script>
+    const myObj = {a: 1, b: 2, c: 3, d: 4, e: 5};
+    const myKeys = Object.keys(myObj);
+    const myValues = Object.values(myObj);
+    
+
+   
+
+    console.log(myKeys);      // Logs all keys with line breaks
+    console.log(myValues);  // Logs the array of values [1, 2, 3, 4, 5]
+</script>
+
+
+
+</script> -->
+<!--entries-->
+<!-- <script>
+    const myObj = {a: 1, b: 2, c: 3}
+        const myEntries = Object.entries(myObj);
+        console.log(myEntries); // Logs the array of entries
+
+</script> -->
+<!--filter-->
+<script>
+    const myArr = [10, 20, 30, 40, 50];
+    const myFilteredArr = myArr.filter((num) => {
+        return num % 2 === 0;
+    });
+    console.log(myFilteredArr);
 </script>
