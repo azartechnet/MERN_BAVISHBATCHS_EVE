@@ -1,0 +1,15 @@
+<p id="d1"></p>
+<script>
+    const empname = new Map([
+        ["azar", 1001],
+        ["mohamed", 1002],
+        ["raja", 1003]
+    ]);
+
+    let displayText = '';
+    empname.forEach((value, key) => {
+        displayText += key + ': ' + value + '<br>';
+    });
+
+    document.getElementById("d1").innerHTML = displayText;
+</script>
