@@ -1,0 +1,16 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("input").keydown(function(){
+            $("input").css("background-color","yellow")
+        });
+        $("input").keyup(function(){
+            $("input").css("background-color","red")
+        })
+    })
+</script>
+<body>
+    Enter the Your name is::<input type="text">
+    
+</body>
