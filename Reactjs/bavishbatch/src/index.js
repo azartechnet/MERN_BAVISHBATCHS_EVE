@@ -208,7 +208,7 @@ r1.render(myelm);
 
       //Function Component using props
 
-      function Sample(props)
+      /*function Sample(props)
       {
          return(
           <div>
@@ -218,4 +218,102 @@ r1.render(myelm);
          )
       }
        const r1=ReactDOM.createRoot(document.getElementById('root'));
-       r1.render(<Sample name="Rahul" id="123"/>)
+       r1.render(<Sample name="Rahul" id="123"/>)*/
+
+//component in component
+
+/*function Sample()
+{
+   return(
+       <h1>This is First Component</h1>
+   )
+}
+function Sample2()
+{
+    return(
+      <div>
+        This is Sample2
+        <Sample/>
+      </div>
+    )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'));
+r1.render(<Sample2/>)*/
+
+/*import App from './App';
+
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<App/>)*/
+
+//Component Constructor
+
+/*class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={name:"azar",age:34}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>{this.state.name}</h1>
+        <h2>{this.state.age}</h2>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'));
+r1.render(<Sample/>)*/
+
+//Changing the state object
+
+class Sample extends React.Component
+{
+  constructor()
+  {
+    super();
+    this.state={
+      emp:{
+        name:"azar",
+        age:25,
+        city:"karur"
+      },
+      showData:false
+    };
+
+}
+showData()
+{
+  this.setState({showData:true})
+}
+hideData()
+{
+  this.setState({showData:false})
+}
+render()
+{
+  let data;
+  if(this.state.showData==true)
+  {
+    data=<div><b>City:</b>{this.state.emp.city}<b>{this.state.emp.name}</b>
+      <button onClick={this.hideData.bind(this)}>HideData</button>
+    </div>
+    
+  }
+  else
+  {
+      data=<div>
+        <button  onClick={this.showData.bind(this)}>ShowData</button>
+      </div>
+  }
+  return(
+    <div>
+      {data}
+    </div>
+  )
+}
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Sample/>)
