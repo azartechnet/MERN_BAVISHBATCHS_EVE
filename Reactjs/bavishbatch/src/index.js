@@ -269,7 +269,7 @@ r1.render(<Sample/>)*/
 
 //Changing the state object
 
-class Sample extends React.Component
+/*class Sample extends React.Component
 {
   constructor()
   {
@@ -316,4 +316,107 @@ render()
 }
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Sample/>)
+r1.render(<Sample/>)*/
+
+//React Event
+
+/*function Football()
+{
+  const shoot=()=>{
+    console.log("Goal")
+    alert("Goal");
+  }
+  return(
+    <div>
+      <button onClick={shoot}>Shoot</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+//React Event
+
+/*function Football()
+{
+   const shoot=(a)=>{
+     alert("Goal"+a)
+   }
+   return(
+      <div>
+        <button onClick={()=>shoot(10)}>Shoot</button>
+      </div>
+   )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Football/>)*/
+
+//Conditional Rendering
+
+/*function MissedGoal()
+{
+  return<h1>MissedGoal</h1>
+}
+function MadeGoal()
+{
+  return<h1>MadeGoal</h1>
+}
+function Goal(props)
+{
+   const isGoal=props.isGoal;
+   if(isGoal)
+   {
+      return<MadeGoal/>
+   }
+   else{
+    return<MissedGoal/>
+   }
+}
+const  r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Goal isGoal={Math.random()>0.5}/>)*/
+
+//React List
+/*function Emp(props) {
+  return <h1>{props.n1}</h1>;
+}
+
+function Salary() {
+  //const emp = ["mohan", "mohamed", "azar"];
+  const emp={1:"azar",2:"mohamed",3:"mohan"};
+  return (
+    <ul>
+      {emp.map((c1) => (
+        <li key={c1}>
+          <Emp n1={c1} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+const r1 = ReactDOM.createRoot(document.getElementById('root'));
+r1.render(<Salary />);*/
+
+//React keys
+
+function Car(props)
+{
+   return<li>I am a {props.brand} as {props.k}</li>
+}
+function Garage()
+{
+  const cars=[
+    {id:1,brand:'Ford'},
+    {id:2,brand:'BMW'},
+    {id:3,brand:'Audi'}
+  ];
+  return(
+    <ul>
+      {cars.map((car)=><Car k={car.id} brand={car.brand}/>)
+      }
+    </ul>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Garage/>)
+
+//React Forms (Task)
