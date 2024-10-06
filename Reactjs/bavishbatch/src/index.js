@@ -398,7 +398,7 @@ r1.render(<Salary />);*/
 
 //React keys
 
-function Car(props)
+/*function Car(props)
 {
    return<li>I am a {props.brand} as {props.k}</li>
 }
@@ -417,6 +417,96 @@ function Garage()
   )
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
-r1.render(<Garage/>)
+r1.render(<Garage/>)*/
 
 //React Forms (Task)
+
+//React getDerivedStateFromProps
+//getDerivedStateFromProps can be used in conditional 
+//rendering to update the state based on changes in props.
+/*class Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={favcolor:"red"};
+  }
+  static getDerivedStateFromProps(props,state)
+  {
+     console.log("getDerivedStateFromProps called");
+     return {favcolor:props.favcolor}
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>My favorite color is {this.state.favcolor}</h1>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header favcolor="blue"/>)//React getDerivedStateFromProps*/
+
+//ComponentDidMount
+
+//The componentDidMount method in react is used 
+//to execute some code immediately
+ //after mounting. This is a lifecycle method in React 
+//class component that is called only once when the 
+//component is mounted in the DOM.
+
+/*class Header extends  React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={favcolor:"red"};
+  }
+  componentDidMount()
+  {
+     setTimeout(()=>{
+      this.setState({favcolor:"blue"});
+     },3000)
+  }
+  render()
+  {
+    return(
+      <div>
+        <h1>My favorite color is {this.state.favcolor}</h1>
+      </div>
+    )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)//React componentDidMount*/
+
+//Updating getDerivedStateFromProps
+
+class  Header extends React.Component
+{
+  constructor(props)
+  {
+    super(props);
+    this.state={favcolor:"red"};
+  }
+  static getDerivedStateFromProps(props,state)
+  {
+    console.log("getDerivedStateFromProps called");
+  }
+  changeColor=()=>{
+    this.setState({favcolor:"blue"});
+  }
+  render()
+  {
+    return(
+      
+      <div>
+        <h1>My favorite color is {this.state.favcolor}</h1>
+        <button onClick={this.changeColor}>Change Color</button>
+      </div>
+      )
+  }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)//React getDerivedStateFromProps*/
