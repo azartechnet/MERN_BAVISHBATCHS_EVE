@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 
 //Basic Rendering
@@ -483,7 +483,7 @@ r1.render(<Header/>)//React componentDidMount*/
 
 //Updating getDerivedStateFromProps
 
-class  Header extends React.Component
+/*class  Header extends React.Component
 {
   constructor(props)
   {
@@ -510,3 +510,55 @@ class  Header extends React.Component
 }
 const r1=ReactDOM.createRoot(document.getElementById('root'))
 r1.render(<Header/>)//React getDerivedStateFromProps*/
+
+//ShouldComponentUpdate
+//shouldComponentUpdate() is part of the updating phase, 
+//which is triggered whenever there's a change in props or state.
+/*class  Header extends React.Component
+{
+   constructor(props)
+   {
+      super(props);
+      this.state={favcolor:"red"}
+   }
+   
+   shouldComponentUpdate(nextprops,nextstate)
+   {
+    console.log("shouldComponentupdate")
+    return nextstate.favcolor!==this.state.favcolor;
+   }
+   changeColor=()=>{
+    this.setState({favcolor:"blue"});
+    }
+    render()
+    {
+       return(
+        <div>
+          <h1>My favorite color is {this.state.favcolor}</h1>
+              
+          <button type='button'  onClick={this.changeColor}>Change Color</button>
+        </div>
+       )
+    }
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Header/>)*/
+
+//React Hooks useState()
+
+function Counter()
+{
+  const [count,setCount]=useState(10);
+  const [name,setName]=useState("mohamed");
+  return(
+    <div>
+      <h1>Count is {count}</h1>
+      <button type='button' onClick={()=>setCount(count+1)}>Increment</button>
+      <button type='button' onClick={()=>setCount(count-1)}>Decrement</button>
+      <h1>My name is {name}</h1>
+      <button type='button' onClick={()=>setName("Ahmed")}>Change Name</button>
+    </div>
+  )
+}
+const r1=ReactDOM.createRoot(document.getElementById('root'))
+r1.render(<Counter/>)
