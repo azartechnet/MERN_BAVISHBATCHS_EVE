@@ -629,7 +629,7 @@ r1.render(<Component1/>)*/
 
 //React useContext
 
-import { createContext,useContext } from 'react';
+/*import { createContext,useContext } from 'react';
 
 const  UserContext=createContext();
 function Component1()
@@ -654,5 +654,43 @@ function Component1()
         )
         }
         const r1=ReactDOM.createRoot(document.getElementById('root'))
-        r1.render(<Component1/>);
-        
+        r1.render(<Component1/>);*/
+
+        //React useRef
+
+        /*import {useRef}from "react";
+        function FocusInput()
+        {
+           const inputRef=useRef("mohamed");
+           const handleClick=()=>{
+            inputRef.current.focus();
+            }
+            return(
+              <div>
+                <input type="text" ref={inputRef}  style={{backgroundColor:'lightblue'}}/>
+                  <button onClick={handleClick}>Focus</button>
+              </div>
+            )
+        }
+        const r1=ReactDOM.createRoot(document.getElementById('root'))
+        r1.render(<FocusInput/>);*/
+
+        import {useRef} from "react";
+
+function FocusInput() {
+    const inputRef = useRef("mohamed");
+
+    const handleMouseEnter = () => {
+        inputRef.current.focus();
+    };
+
+    return (
+        <div>
+            <input type="text" ref={inputRef} style={{backgroundColor: 'lightblue'}}/>
+            <button onMouseEnter={handleMouseEnter}>Hover to Focus</button>
+        </div>
+    );
+}
+
+const r1 = ReactDOM.createRoot(document.getElementById('root'));
+r1.render(<FocusInput />);
